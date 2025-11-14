@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WanderFlow · 歷史記錄</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-yH2f9t7tN9p1+v3g9utkS7r5Oj0kKq6HgMHqYjgJv1nVbWcv16O3Qe9nEGBWeItPxX2VINeodIZ6hO6PqxG9NA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      background: linear-gradient(180deg, #f8fbff 0%, #f1f5ff 45%, #f6f9ff 100%);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-6 font-['SF Pro Display',_Inter,_PingFang_HK,_Helvetica,_Arial,_sans-serif] text-slate-900">
+  <div class="w-full max-w-md bg-white/95 backdrop-blur-xl shadow-xl rounded-3xl overflow-hidden border border-white/70">
+    <header class="px-6 pt-6 pb-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-slate-400">歷史靈感</p>
+          <h1 class="text-xl font-semibold">我的足跡</h1>
+        </div>
+        <button class="h-11 px-4 rounded-2xl bg-slate-100 text-slate-600 text-sm flex items-center gap-2">
+          <i class="fa-solid fa-chart-line text-teal-500"></i>
+          趋势分析
+        </button>
+      </div>
+      <div class="mt-4 rounded-3xl bg-slate-100/70 border border-slate-100 p-4 flex items-center justify-between">
+        <div>
+          <p class="text-xs text-slate-500">近 30 日完成行程</p>
+          <p class="text-2xl font-semibold text-slate-800">12 次</p>
+        </div>
+        <div class="text-xs text-emerald-500 font-medium">
+          <i class="fa-solid fa-arrow-trend-up mr-1"></i>
+          較上月 +18%
+        </div>
+      </div>
+    </header>
+
+    <main class="px-6 pb-6 space-y-6">
+      <section>
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-semibold text-slate-800">按主題回顧</h2>
+          <button class="text-sm text-slate-500">篩選</button>
+        </div>
+        <div class="mt-4 grid grid-cols-2 gap-4">
+          <article class="rounded-3xl border border-slate-100 bg-white shadow-sm p-4">
+            <div class="flex items-center justify-between text-xs text-slate-400">
+              <span>上週末</span>
+              <span class="text-emerald-500 font-medium">滿意度 94%</span>
+            </div>
+            <h3 class="mt-2 text-base font-semibold text-slate-800">維港夜色 · 光影之旅</h3>
+            <ul class="mt-3 space-y-2 text-xs text-slate-500">
+              <li><i class="fa-solid fa-route text-teal-500 mr-2"></i>中環街頭藝術 → 星光大道</li>
+              <li><i class="fa-solid fa-music text-rose-400 mr-2"></i>西九自由音樂節</li>
+              <li><i class="fa-solid fa-cloud-moon text-indigo-400 mr-2"></i>OpenWeather：晴朗</li>
+            </ul>
+          </article>
+          <article class="rounded-3xl border border-slate-100 bg-white shadow-sm p-4">
+            <div class="flex items-center justify-between text-xs text-slate-400">
+              <span>10 月假期</span>
+              <span class="text-orange-500 font-medium">發現新偏好</span>
+            </div>
+            <h3 class="mt-2 text-base font-semibold text-slate-800">離島慢遊 · 文青路線</h3>
+            <ul class="mt-3 space-y-2 text-xs text-slate-500">
+              <li><i class="fa-solid fa-ship text-sky-500 mr-2"></i>南丫島日光行山</li>
+              <li><i class="fa-solid fa-utensils text-amber-500 mr-2"></i>漁村海鮮體驗</li>
+              <li><i class="fa-solid fa-camera-retro text-fuchsia-500 mr-2"></i>Instagram 打卡 24 次</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-semibold text-slate-800">時間軸</h2>
+          <button class="text-sm text-teal-500 font-medium">導出行事曆</button>
+        </div>
+        <div class="mt-4 space-y-4">
+          <article class="rounded-3xl border border-slate-100 bg-white shadow-sm p-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-xs text-slate-400">2025 / 11 / 09 · 星期日</p>
+                <h3 class="text-base font-semibold text-slate-800 mt-1">港島自然日</h3>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs bg-emerald-50 text-emerald-500 font-medium">完美完成</span>
+            </div>
+            <div class="mt-3 space-y-3 text-sm text-slate-600">
+              <div class="flex items-start gap-3">
+                <div class="h-9 w-9 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center">
+                  <i class="fa-solid fa-tree"></i>
+                </div>
+                <div>
+                  <p class="font-medium">龍脊晨跑</p>
+                  <p class="text-xs text-slate-400 mt-1">OpenWeather：能見度極佳 · 日出雲海</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="h-9 w-9 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center">
+                  <i class="fa-solid fa-egg"></i>
+                </div>
+                <div>
+                  <p class="font-medium">灣仔靈感早午餐</p>
+                  <p class="text-xs text-slate-400 mt-1">Yelp 4.6 · 推介松露班尼迪克蛋</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="h-9 w-9 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                  <i class="fa-solid fa-palette"></i>
+                </div>
+                <div>
+                  <p class="font-medium">PMQ 手作體驗</p>
+                  <p class="text-xs text-slate-400 mt-1">基於 Facebook 用戶畫像匹配 · 滿意度 4.9</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-3xl border border-slate-100 bg-white shadow-sm p-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-xs text-slate-400">2025 / 10 / 22 · 星期三</p>
+                <h3 class="text-base font-semibold text-slate-800 mt-1">雨夜城市探險</h3>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs bg-slate-100 text-slate-500 font-medium">部分完成</span>
+            </div>
+            <div class="mt-3 space-y-3 text-sm text-slate-600">
+              <div class="flex items-start gap-3">
+                <div class="h-9 w-9 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center">
+                  <i class="fa-solid fa-umbrella"></i>
+                </div>
+                <div>
+                  <p class="font-medium">雨傘巷街拍</p>
+                  <p class="text-xs text-slate-400 mt-1">OpenWeather：暴雨預警 · 已自動調整行程</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="h-9 w-9 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center">
+                  <i class="fa-solid fa-bowl-food"></i>
+                </div>
+                <div>
+                  <p class="font-medium">旺角宵夜巡禮</p>
+                  <p class="text-xs text-slate-400 mt-1">Twitter 熱門話題 #夜貓子必去</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-100 bg-white/80 backdrop-blur px-6 py-4">
+      <nav class="flex items-center justify-around text-slate-400 text-xs">
+        <a href="home.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-map-location-dot text-lg"></i>
+          主頁
+        </a>
+        <a href="discover.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-compass text-lg"></i>
+          探索
+        </a>
+        <a href="history.html" class="flex flex-col items-center text-teal-600">
+          <i class="fa-solid fa-clock-rotate-left text-lg"></i>
+          歷史
+        </a>
+        <a href="profile.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-user text-lg"></i>
+          我的
+        </a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
+
+
+

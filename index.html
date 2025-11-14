@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WanderFlow · 主頁</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-yH2f9t7tN9p1+v3g9utkS7r5Oj0kKq6HgMHqYjgJv1nVbWcv16O3Qe9nEGBWeItPxX2VINeodIZ6hO6PqxG9NA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      background: linear-gradient(180deg, #f8fbff 0%, #eef3ff 40%, #e8f7f4 100%);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-6 font-['SF Pro Display',_Inter,_PingFang_HK,_Helvetica,_Arial,_sans-serif] text-slate-900">
+  <div class="w-full max-w-md bg-white/90 backdrop-blur-xl shadow-xl rounded-3xl overflow-hidden border border-white/70">
+    <header class="px-6 pt-6 pb-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-slate-400">現時位置</p>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-teal-500"></i>
+            <h1 class="text-xl font-semibold">中環 · 香港</h1>
+          </div>
+        </div>
+        <button class="h-11 w-11 rounded-2xl bg-teal-500 text-white flex items-center justify-center shadow-lg" aria-label="創建新計劃" onclick="window.location.href='create-plan.html'">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+      <div class="mt-4 relative">
+        <input type="text" placeholder="搜尋活動 / 美食 / 景點" class="w-full rounded-2xl bg-slate-100/80 py-3 pl-4 pr-12 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-400/60 focus:bg-white" aria-label="搜尋">
+        <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+      </div>
+    </header>
+
+    <section class="px-6">
+      <div class="relative rounded-3xl overflow-hidden h-[550px] border border-white/70 shadow-inner">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.322660258265!2d114.15715007678345!3d22.281981146266234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404006a725c08a1%3A0x7e5ad5d27f4ddc95!2z5Lit5Yqf5YyX5Lqs5biC!5e0!3m2!1szh-TW!2shk!4v1731490800000!5m2!1szh-TW!2shk"
+          class="absolute inset-0 w-full h-full border-0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          aria-label="香港地圖">
+        </iframe>
+        <div class="absolute inset-0 bg-slate-900/10 backdrop-blur-[1px] pointer-events-none"></div>
+
+        <!-- 顶部控制栏 -->
+        <div class="absolute inset-x-4 top-4">
+          <div class="flex items-center justify-between mb-3">
+            <div class="rounded-full bg-white/95 px-4 py-2 text-xs text-slate-600 shadow-lg flex items-center gap-2 backdrop-blur-sm">
+              <span class="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span class="animate-pulse">正在根據人流優化路線...</span>
+              <span class="ml-2 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600 font-medium">12 個活動</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="h-10 w-10 bg-white/95 rounded-2xl flex items-center justify-center text-slate-600 shadow-lg backdrop-blur-sm hover:bg-white transition-colors" aria-label="定位">
+                <i class="fa-solid fa-crosshairs"></i>
+              </button>
+              <button class="h-10 w-10 bg-white/95 rounded-2xl flex items-center justify-center text-slate-600 shadow-lg backdrop-blur-sm hover:bg-white transition-colors" aria-label="篩選">
+                <i class="fa-solid fa-filter"></i>
+              </button>
+            </div>
+          </div>
+          
+          <!-- 实时数据统计 -->
+          <div class="flex items-center gap-2 flex-wrap">
+            <div class="px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-sm shadow text-xs text-slate-600 flex items-center gap-2">
+              <i class="fa-solid fa-fire text-orange-500"></i>
+              <span>熱門活動 5 個</span>
+            </div>
+            <div class="px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-sm shadow text-xs text-slate-600 flex items-center gap-2">
+              <i class="fa-solid fa-users text-indigo-500"></i>
+              <span>人流指數 0.68</span>
+            </div>
+            <div class="px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-sm shadow text-xs text-slate-600 flex items-center gap-2">
+              <i class="fa-solid fa-cloud-sun text-sky-500"></i>
+              <span>27°C 晴朗</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 地图控制按钮（右侧） -->
+        <div class="absolute right-4 top-32 flex flex-col gap-2">
+          <button class="h-10 w-10 bg-white/95 rounded-2xl flex items-center justify-center text-slate-600 shadow-lg backdrop-blur-sm hover:bg-white transition-colors" aria-label="放大">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <button class="h-10 w-10 bg-white/95 rounded-2xl flex items-center justify-center text-slate-600 shadow-lg backdrop-blur-sm hover:bg-white transition-colors" aria-label="縮小">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+          <button class="h-10 w-10 bg-white/95 rounded-2xl flex items-center justify-center text-slate-600 shadow-lg backdrop-blur-sm hover:bg-white transition-colors" aria-label="圖層">
+            <i class="fa-solid fa-layer-group"></i>
+          </button>
+        </div>
+
+        <!-- 活动标记卡片 -->
+        <div class="absolute inset-0 pointer-events-none">
+          <!-- 活动卡片 1 - 左上 -->
+          <div class="absolute left-4 top-24 max-w-xs bg-white/95 rounded-2xl shadow-xl p-3 border border-white/40 backdrop-blur-sm pointer-events-auto hover:scale-105 transition-transform">
+            <div class="flex items-center gap-3">
+              <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white" aria-hidden="true">
+                <i class="fa-solid fa-music"></i>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm font-semibold">西九自由音樂節</p>
+                <p class="text-xs text-slate-500">19:30 · 西九文化區</p>
+              </div>
+            </div>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-xs text-emerald-600 font-medium flex items-center gap-1">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                推薦指數 9.1
+              </span>
+              <button class="text-xs font-medium text-teal-600 hover:text-teal-700">查看詳情</button>
+            </div>
+            <div class="mt-2 flex items-center gap-2 text-xs text-slate-500">
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600">Twitter 熱議</span>
+              <span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-600">Klook 有票</span>
+            </div>
+          </div>
+
+          <!-- 活动卡片 2 - 右上 -->
+          <div class="absolute right-4 top-32 max-w-xs bg-white/95 rounded-2xl shadow-xl p-3 border border-white/40 backdrop-blur-sm pointer-events-auto hover:scale-105 transition-transform">
+            <div class="flex items-center gap-3">
+              <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white" aria-hidden="true">
+                <i class="fa-solid fa-palette"></i>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm font-semibold">M+ 博物館展覽</p>
+                <p class="text-xs text-slate-500">14:00 · 西九文化區</p>
+              </div>
+            </div>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-xs text-indigo-600 font-medium flex items-center gap-1">
+                <i class="fa-solid fa-star"></i>
+                畫像匹配 92%
+              </span>
+              <button class="text-xs font-medium text-teal-600 hover:text-teal-700">加入行程</button>
+            </div>
+            <div class="mt-2 flex items-center gap-2 text-xs text-slate-500">
+              <span class="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600">剩餘 35 張</span>
+              <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-600">HK$ 320</span>
+            </div>
+          </div>
+
+          <!-- 活动卡片 3 - 左下 -->
+          <div class="absolute left-4 bottom-24 max-w-xs bg-white/95 rounded-2xl shadow-xl p-3 border border-white/40 backdrop-blur-sm pointer-events-auto hover:scale-105 transition-transform">
+            <div class="flex items-center gap-3">
+              <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center text-white" aria-hidden="true">
+                <i class="fa-solid fa-utensils"></i>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm font-semibold">PMQ 藝術夜市</p>
+                <p class="text-xs text-slate-500">18:00 · 中環</p>
+              </div>
+            </div>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-xs text-rose-600 font-medium flex items-center gap-1">
+                <i class="fa-solid fa-fire"></i>
+                熱度 88%
+              </span>
+              <button class="text-xs font-medium text-teal-600 hover:text-teal-700">查看詳情</button>
+            </div>
+            <div class="mt-2 flex items-center gap-2 text-xs text-slate-500">
+              <span class="px-2 py-0.5 rounded-full bg-rose-50 text-rose-600">Yelp 4.8</span>
+              <span class="px-2 py-0.5 rounded-full bg-sky-50 text-sky-600">步行 6 分鐘</span>
+            </div>
+          </div>
+
+          <!-- 活动卡片 4 - 右下 -->
+          <div class="absolute right-4 bottom-16 max-w-xs bg-white/95 rounded-2xl shadow-xl p-3 border border-white/40 backdrop-blur-sm pointer-events-auto hover:scale-105 transition-transform">
+            <div class="flex items-center gap-3">
+              <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center text-white" aria-hidden="true">
+                <i class="fa-solid fa-utensils"></i>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm font-semibold">叮叮車霓虹宵夜</p>
+                <p class="text-xs text-slate-500">22:00 · 銅鑼灣</p>
+              </div>
+            </div>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-xs text-orange-500 font-medium flex items-center gap-1">
+                <i class="fa-solid fa-location-arrow"></i>
+                距離你 8 分鐘
+              </span>
+              <button class="text-xs font-medium text-teal-600 hover:text-teal-700">加入行程</button>
+            </div>
+            <div class="mt-2 flex items-center gap-2 text-xs text-slate-500">
+              <span class="px-2 py-0.5 rounded-full bg-orange-50 text-orange-600">即時推薦</span>
+              <span class="px-2 py-0.5 rounded-full bg-teal-50 text-teal-600">適合夜晚</span>
+            </div>
+          </div>
+
+          <!-- 路线预览指示 -->
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div class="px-4 py-2 rounded-full bg-white/95 backdrop-blur-sm shadow-lg border border-white/40 pointer-events-auto">
+              <div class="flex items-center gap-2 text-xs text-slate-600">
+                <i class="fa-solid fa-route text-teal-500"></i>
+                <span>路線優化中...</span>
+                <div class="flex gap-1">
+                  <span class="h-1.5 w-1.5 rounded-full bg-teal-500 animate-pulse"></span>
+                  <span class="h-1.5 w-1.5 rounded-full bg-teal-500 animate-pulse" style="animation-delay: 0.2s"></span>
+                  <span class="h-1.5 w-1.5 rounded-full bg-teal-500 animate-pulse" style="animation-delay: 0.4s"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 底部筛选栏 -->
+        <div class="absolute inset-x-4 bottom-4">
+          <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
+            <button class="px-4 py-2 rounded-full bg-teal-500 text-white text-xs font-medium whitespace-nowrap shadow-lg flex items-center gap-2">
+              <i class="fa-solid fa-sparkles"></i>
+              全部
+            </button>
+            <button class="px-4 py-2 rounded-full bg-white/95 backdrop-blur-sm text-slate-600 text-xs font-medium whitespace-nowrap shadow flex items-center gap-2 hover:bg-white">
+              <i class="fa-solid fa-music"></i>
+              音樂
+            </button>
+            <button class="px-4 py-2 rounded-full bg-white/95 backdrop-blur-sm text-slate-600 text-xs font-medium whitespace-nowrap shadow flex items-center gap-2 hover:bg-white">
+              <i class="fa-solid fa-utensils"></i>
+              美食
+            </button>
+            <button class="px-4 py-2 rounded-full bg-white/95 backdrop-blur-sm text-slate-600 text-xs font-medium whitespace-nowrap shadow flex items-center gap-2 hover:bg-white">
+              <i class="fa-solid fa-palette"></i>
+              藝術
+            </button>
+            <button class="px-4 py-2 rounded-full bg-white/95 backdrop-blur-sm text-slate-600 text-xs font-medium whitespace-nowrap shadow flex items-center gap-2 hover:bg-white">
+              <i class="fa-solid fa-fire"></i>
+              熱門
+            </button>
+            <button class="px-4 py-2 rounded-full bg-white/95 backdrop-blur-sm text-slate-600 text-xs font-medium whitespace-nowrap shadow flex items-center gap-2 hover:bg-white">
+              <i class="fa-solid fa-location-dot"></i>
+              附近
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 mt-6">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-semibold">為你生成今日行程</h2>
+        <button class="text-sm text-teal-600 font-medium">查看全部</button>
+      </div>
+      <div class="mb-4 flex gap-2">
+        <button class="flex-1 px-4 py-3 rounded-2xl bg-gradient-to-r from-teal-500 to-emerald-500 text-white text-sm font-semibold shadow-lg flex items-center justify-center gap-2" onclick="window.location.href='create-plan.html'">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          智能生成新計劃
+        </button>
+        <button class="px-4 py-3 rounded-2xl bg-white border border-slate-200 text-slate-600 text-sm font-medium shadow flex items-center justify-center" aria-label="快速調整">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+      <div class="mt-4 space-y-3">
+        <article class="flex items-center gap-4 bg-white/90 rounded-2xl p-4 shadow border border-slate-100">
+          <div class="h-14 w-14 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center text-white text-lg">
+            <i class="fa-solid fa-cloud-sun"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between text-sm text-slate-500">
+              <span>上午 · 天氣晴朗 27°C</span>
+              <span class="text-emerald-500 font-medium">戶外推介</span>
+            </div>
+            <p class="text-base font-semibold mt-1 text-slate-800">太平山日出 &amp; 咖啡慢享</p>
+          </div>
+          <i class="fa-solid fa-chevron-right text-slate-300"></i>
+        </article>
+
+        <article class="flex items-center gap-4 bg-white/90 rounded-2xl p-4 shadow border border-slate-100">
+          <div class="h-14 w-14 rounded-2xl bg-gradient-to-br from-teal-400 to-emerald-500 flex items-center justify-center text-white text-lg" aria-hidden="true">
+            <i class="fa-solid fa-ticket"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between text-sm text-slate-500">
+              <span>下午 · Klook</span>
+              <span class="text-slate-400">席位緊張</span>
+            </div>
+            <p class="text-base font-semibold mt-1 text-slate-800">MIRROR 演唱會彩排體驗</p>
+          </div>
+          <i class="fa-solid fa-chevron-right text-slate-300"></i>
+        </article>
+
+        <article class="flex items-center gap-4 bg-white/90 rounded-2xl p-4 shadow border border-slate-100">
+          <div class="h-14 w-14 rounded-2xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center text-white text-lg" aria-hidden="true">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between text-sm text-slate-500">
+              <span>夜晚 · Yelp &amp; Twitter</span>
+              <span class="text-orange-500 font-medium">熱門討論</span>
+            </div>
+            <p class="text-base font-semibold mt-1 text-slate-800">PMQ 藝術夜市 + 網紅甜品</p>
+          </div>
+          <i class="fa-solid fa-chevron-right text-slate-300"></i>
+        </article>
+      </div>
+    </section>
+
+    <footer class="mt-6">
+      <nav class="flex items-center justify-around border-t border-slate-100 px-6 py-4 bg-white/80 backdrop-blur">
+        <a href="home.html" class="flex flex-col items-center text-teal-600">
+          <i class="fa-solid fa-map-location-dot text-lg"></i>
+          <span class="text-xs mt-1 font-medium">主頁</span>
+        </a>
+        <a href="discover.html" class="flex flex-col items-center text-slate-400 hover:text-teal-500 transition-colors">
+          <i class="fa-solid fa-compass text-lg"></i>
+          <span class="text-xs mt-1 font-medium">探索</span>
+        </a>
+        <a href="itinerary.html" class="flex flex-col items-center text-slate-400 hover:text-teal-500 transition-colors">
+          <i class="fa-solid fa-route text-lg"></i>
+          <span class="text-xs mt-1 font-medium">行程</span>
+        </a>
+        <a href="profile.html" class="flex flex-col items-center text-slate-400 hover:text-teal-500 transition-colors">
+          <i class="fa-solid fa-user text-lg"></i>
+          <span class="text-xs mt-1 font-medium">我的</span>
+        </a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WanderFlow · 漫無目的模式</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-yH2f9t7tN9p1+v3g9utkS7r5Oj0kKq6HgMHqYjgJv1nVbWcv16O3Qe9nEGBWeItPxX2VINeodIZ6hO6PqxG9NA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      background: linear-gradient(180deg, #f8fbff 0%, #eef3ff 40%, #e8f7f4 100%);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-6 font-['SF Pro Display',_Inter,_PingFang_HK,_Helvetica,_Arial,_sans-serif] text-slate-900">
+  <div class="w-full max-w-md bg-white/95 backdrop-blur-xl shadow-xl rounded-3xl overflow-hidden border border-white/70">
+    <header class="px-6 pt-6 pb-4">
+      <div class="flex items-center justify-between">
+        <button class="h-11 w-11 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-600" onclick="window.location.href='create-plan.html'" aria-label="返回">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <h1 class="text-xl font-semibold">漫無目的模式</h1>
+        <div class="w-11"></div>
+      </div>
+      <p class="text-xs text-slate-400 mt-3 text-center">沒有特定目標？讓我為你探索驚喜，隨時可調整方向</p>
+    </header>
+
+    <main class="px-6 pb-6 space-y-6">
+      <section class="rounded-3xl border border-slate-100 bg-gradient-to-br from-indigo-50 to-purple-50 p-5">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="h-12 w-12 rounded-2xl bg-indigo-500 text-white flex items-center justify-center text-lg">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div>
+            <h2 class="text-base font-semibold text-slate-800">探索時長</h2>
+            <p class="text-xs text-slate-500 mt-1">你想漫遊多久？</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="flex-1 px-4 py-3 rounded-2xl border-2 border-indigo-500 bg-indigo-50 text-indigo-600 text-sm font-medium">2-3 小時</button>
+          <button class="flex-1 px-4 py-3 rounded-2xl border border-slate-200 bg-white text-slate-600 text-sm hover:border-indigo-300">4-5 小時</button>
+          <button class="flex-1 px-4 py-3 rounded-2xl border border-slate-200 bg-white text-slate-600 text-sm hover:border-indigo-300">全天</button>
+        </div>
+        <div class="mt-4 rounded-2xl bg-white/80 p-3">
+          <div class="flex items-center justify-between text-xs text-slate-600">
+            <span>開始時間</span>
+            <span class="font-medium">現在 · 14:30</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-3xl border border-slate-100 bg-white shadow-sm p-5">
+        <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">探索偏好</h2>
+        <div class="space-y-4">
+          <div>
+            <label class="text-xs text-slate-500 mb-2 block">活動類型（可多選）</label>
+            <div class="flex flex-wrap gap-2">
+              <button class="px-3 py-2 rounded-2xl bg-indigo-500 text-white text-xs font-medium">藝術</button>
+              <button class="px-3 py-2 rounded-2xl bg-slate-100 text-slate-600 text-xs font-medium">美食</button>
+              <button class="px-3 py-2 rounded-2xl bg-indigo-500 text-white text-xs font-medium">咖啡</button>
+              <button class="px-3 py-2 rounded-2xl bg-slate-100 text-slate-600 text-xs font-medium">戶外</button>
+              <button class="px-3 py-2 rounded-2xl bg-slate-100 text-slate-600 text-xs font-medium">音樂</button>
+              <button class="px-3 py-2 rounded-2xl bg-slate-100 text-slate-600 text-xs font-medium">購物</button>
+            </div>
+          </div>
+          <div>
+            <label class="text-xs text-slate-500 mb-2 block">探索範圍</label>
+            <div class="flex items-center gap-2">
+              <button class="flex-1 px-4 py-2 rounded-2xl border border-slate-200 bg-white text-sm text-slate-600">附近 1 公里</button>
+              <button class="flex-1 px-4 py-2 rounded-2xl border border-indigo-500 bg-indigo-50 text-sm text-indigo-600 font-medium">附近 3 公里</button>
+              <button class="flex-1 px-4 py-2 rounded-2xl border border-slate-200 bg-white text-sm text-slate-600">全港島</button>
+            </div>
+          </div>
+          <div>
+            <label class="text-xs text-slate-500 mb-2 block">發現驚喜程度</label>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-2">
+              <span>保守</span>
+              <span>適中</span>
+              <span>大膽探索</span>
+            </div>
+            <input type="range" min="0" max="100" value="60" class="w-full accent-indigo-500">
+            <p class="mt-2 text-xs text-slate-400">數值越高，AI 會推薦更多小眾和隱藏地點</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-3xl border border-slate-100 bg-white shadow-sm p-5">
+        <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">實時數據來源</h2>
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div class="flex items-center gap-2 p-3 rounded-2xl bg-slate-50">
+            <i class="fa-brands fa-twitter text-sky-400"></i>
+            <span class="text-slate-600">Twitter 熱度</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-2xl bg-slate-50">
+            <i class="fa-brands fa-facebook text-blue-500"></i>
+            <span class="text-slate-600">Facebook 用戶畫像</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-2xl bg-slate-50">
+            <i class="fa-solid fa-star text-amber-500"></i>
+            <span class="text-slate-600">Yelp 評分</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-2xl bg-slate-50">
+            <i class="fa-solid fa-comments text-rose-400"></i>
+            <span class="text-slate-600">Twitter 靈感</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-2xl bg-slate-50">
+            <i class="fa-solid fa-cloud-sun text-sky-500"></i>
+            <span class="text-slate-600">OpenWeather</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-2xl bg-slate-50">
+            <i class="fa-solid fa-map text-teal-500"></i>
+            <span class="text-slate-600">Google Maps</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-3xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-purple-50 p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="h-10 w-10 rounded-2xl bg-indigo-500 text-white flex items-center justify-center">
+            <i class="fa-solid fa-sparkles"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-slate-800">智能探索特色</h3>
+            <p class="text-xs text-slate-500">AI 會持續為你發現驚喜</p>
+          </div>
+        </div>
+        <div class="space-y-2 text-xs text-slate-600">
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-check text-indigo-500 mt-0.5"></i>
+            <span>根據你的偏好，智能推薦符合興趣的活動</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-check text-indigo-500 mt-0.5"></i>
+            <span>基於 Facebook 用戶畫像分析你的偏好，結合 Twitter 熱度推薦當下最受歡迎的地點</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-check text-indigo-500 mt-0.5"></i>
+            <span>行程進行中可隨時調整方向，無需固定路線</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-check text-indigo-500 mt-0.5"></i>
+            <span>發現新熱點時自動推送，讓你不錯過精彩</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-check text-indigo-500 mt-0.5"></i>
+            <span>根據實時天氣和路況，動態優化推薦順序</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="rounded-2xl bg-amber-50 border border-amber-100 p-4">
+        <div class="flex items-start gap-3">
+          <i class="fa-solid fa-lightbulb text-amber-500 mt-0.5"></i>
+          <div class="flex-1">
+            <p class="text-xs font-medium text-amber-800 mb-1">探索提示</p>
+            <p class="text-xs text-amber-700 leading-relaxed">開始探索後，你可以隨時點擊「重新生成」按鈕，AI 會根據你當前位置和剩餘時間，為你推薦新的驚喜地點。無需擔心迷路，系統會持續優化路線。</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="w-full py-4 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold shadow-lg flex items-center justify-center gap-2 hover:shadow-xl transition-shadow" onclick="window.location.href='itinerary.html'">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        開始探索
+      </button>
+    </main>
+
+    <footer class="border-t border-slate-100 bg-white/80 backdrop-blur px-6 py-4">
+      <nav class="flex items-center justify-around text-slate-400 text-xs">
+        <a href="home.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-map-location-dot text-lg"></i>
+          主頁
+        </a>
+        <a href="discover.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-compass text-lg"></i>
+          探索
+        </a>
+        <a href="itinerary.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-route text-lg"></i>
+          行程
+        </a>
+        <a href="profile.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-user text-lg"></i>
+          我的
+        </a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
+

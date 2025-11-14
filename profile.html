@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WanderFlow · 我的</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-yH2f9t7tN9p1+v3g9utkS7r5Oj0kKq6HgMHqYjgJv1nVbWcv16O3Qe9nEGBWeItPxX2VINeodIZ6hO6PqxG9NA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      background: linear-gradient(180deg, #f7f9ff 0%, #f2f7ff 40%, #fef9ff 100%);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-6 font-['SF Pro Display',_Inter,_PingFang_HK,_Helvetica,_Arial,_sans-serif] text-slate-900">
+  <div class="w-full max-w-md bg-white/95 backdrop-blur-xl shadow-xl rounded-3xl overflow-hidden border border-white/70">
+    <header class="px-6 pt-6 pb-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-slate-400">歡迎返嚟</p>
+          <h1 class="text-xl font-semibold">Mia Wong</h1>
+        </div>
+        <button class="h-11 w-11 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-600" aria-label="前往設定">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+      </div>
+      <div class="mt-5 flex items-center gap-4">
+        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=120&q=80" alt="用戶頭像" class="h-16 w-16 rounded-3xl object-cover shadow-lg">
+        <div class="flex-1">
+          <div class="flex items-center justify-between">
+            <p class="text-sm text-slate-500">本週探索時數</p>
+            <span class="text-sm font-semibold text-teal-500">+12%</span>
+          </div>
+          <div class="mt-2 h-3 rounded-full bg-slate-100 overflow-hidden">
+            <div class="h-full w-3/4 rounded-full bg-gradient-to-r from-teal-400 to-emerald-500"></div>
+          </div>
+          <p class="text-xs text-slate-400 mt-2">累計生成行程 27 次 · 收藏靈感 142 條</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="px-6 pb-6 space-y-6">
+      <section>
+        <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wide">快速操作</h2>
+        <div class="mt-3 grid grid-cols-3 gap-3">
+          <a href="itinerary.html" class="rounded-3xl bg-gradient-to-br from-teal-400 to-emerald-500 text-white py-4 flex flex-col items-center justify-center gap-2 shadow-lg">
+            <i class="fa-solid fa-route text-lg"></i>
+            <span class="text-xs font-medium">今日行程</span>
+          </a>
+          <a href="history.html" class="rounded-3xl bg-white border border-slate-100 py-4 flex flex-col items-center justify-center gap-2 text-teal-500 shadow">
+            <i class="fa-solid fa-clock-rotate-left text-lg"></i>
+            <span class="text-xs font-medium">歷史記錄</span>
+          </a>
+          <a href="preferences.html" class="rounded-3xl bg-white border border-slate-100 py-4 flex flex-col items-center justify-center gap-2 text-slate-600 shadow">
+            <i class="fa-solid fa-sliders text-lg"></i>
+            <span class="text-xs font-medium">偏好設定</span>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-semibold text-slate-800">個人化偏好</h2>
+          <button class="text-sm text-teal-500 font-medium">調整</button>
+        </div>
+        <div class="mt-4 space-y-3">
+          <div class="flex items-center justify-between rounded-3xl bg-white border border-slate-100 p-4 shadow-sm">
+            <div>
+              <p class="text-sm font-semibold text-slate-800">氛圍偏好</p>
+              <p class="text-xs text-slate-400 mt-1">溫度 21-27°C · 音樂 / 藝術 / 咖啡</p>
+            </div>
+            <div class="flex -space-x-2">
+              <span class="px-3 py-1 rounded-full bg-teal-50 text-teal-600 text-xs font-medium">戶外</span>
+              <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-medium">藝術</span>
+              <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-600 text-xs font-medium">美食</span>
+            </div>
+          </div>
+          <div class="rounded-3xl bg-white border border-slate-100 p-4 shadow-sm">
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-semibold text-slate-800">社交分享</p>
+              <span class="flex items-center gap-2 text-xs text-emerald-500 font-medium">
+                <i class="fa-solid fa-check"></i>
+                自動同步至 Twitter
+              </span>
+            </div>
+            <div class="mt-3 flex items-center gap-3">
+              <span class="px-3 py-1 rounded-full bg-slate-100 text-xs text-slate-500">Facebook</span>
+              <span class="px-3 py-1 rounded-full bg-teal-100 text-xs text-teal-600">Twitter</span>
+              <span class="px-3 py-1 rounded-full bg-slate-100 text-xs text-slate-500">Yelp</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-semibold text-slate-800">我的收藏</h2>
+          <button class="text-sm text-slate-500">查看全部</button>
+        </div>
+        <div class="mt-4 space-y-3">
+          <article class="flex gap-3 rounded-3xl bg-white border border-slate-100 p-3 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=100&q=80" alt="活動" class="h-20 w-20 rounded-2xl object-cover">
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-semibold text-slate-800">香港交響樂團星空場</p>
+                <span class="text-xs px-2 py-1 rounded-full bg-emerald-50 text-emerald-500 font-medium">本週熱門</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-1">週五 · 20:00 · 西九文化區</p>
+              <div class="mt-2 flex items-center gap-3 text-xs text-slate-500">
+                <span><i class="fa-solid fa-ticket-simple text-teal-500 mr-1"></i>Klook</span>
+                <span><i class="fa-solid fa-sun text-amber-400 mr-1"></i>OpenWeather 晴</span>
+              </div>
+            </div>
+          </article>
+          <article class="flex gap-3 rounded-3xl bg-white border border-slate-100 p-3 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=100&q=80" alt="餐廳" class="h-20 w-20 rounded-2xl object-cover">
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-semibold text-slate-800">灣仔露台花園餐酒館</p>
+                <span class="text-xs px-2 py-1 rounded-full bg-orange-50 text-orange-500 font-medium">Yelp 4.7</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-1">推介：日落時段晚餐</p>
+              <div class="mt-2 flex items-center gap-3 text-xs text-slate-500">
+                <span><i class="fa-solid fa-person-walking text-slate-400 mr-1"></i>步行 6 分鐘</span>
+                <span><i class="fa-solid fa-comments text-rose-400 mr-1"></i>社交熱議 78%</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-100 bg-white/80 backdrop-blur px-6 py-4">
+      <nav class="flex items-center justify-around text-slate-400 text-xs">
+        <a href="home.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-map-location-dot text-lg"></i>
+          主頁
+        </a>
+        <a href="discover.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-compass text-lg"></i>
+          探索
+        </a>
+        <a href="search.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-magnifying-glass text-lg"></i>
+          搜尋
+        </a>
+        <a href="profile.html" class="flex flex-col items-center text-teal-600">
+          <i class="fa-solid fa-user text-lg"></i>
+          我的
+        </a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
+
+
+

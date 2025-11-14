@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WanderFlow · 偏好设置</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-yH2f9t7tN9p1+v3g9utkS7r5Oj0kKq6HgMHqYjgJv1nVbWcv16O3Qe9nEGBWeItPxX2VINeodIZ6hO6PqxG9NA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      background: linear-gradient(180deg, #f9fbff 0%, #f3f7ff 45%, #fdfbff 100%);
+    }
+    input[type="checkbox"] {
+      accent-color: #0f766e;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-6 font-['SF Pro Display',_Inter,_PingFang_HK,_Helvetica,_Arial,_sans-serif] text-slate-900">
+  <div class="w-full max-w-md bg-white/95 backdrop-blur-xl shadow-xl rounded-3xl overflow-hidden border border-white/70">
+    <header class="px-6 pt-6 pb-4 flex items-center justify-between">
+      <button class="h-11 w-11 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-600" aria-label="返回">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <h1 class="text-xl font-semibold">偏好設定</h1>
+      <button class="h-11 w-11 rounded-2xl bg-teal-500 text-white flex items-center justify-center" aria-label="儲存偏好">
+        <i class="fa-solid fa-floppy-disk"></i>
+      </button>
+    </header>
+
+    <main class="px-6 pb-6 space-y-6">
+      <section class="rounded-3xl border border-slate-100 bg-white shadow-sm">
+        <div class="px-5 py-4 border-b border-slate-100">
+          <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wide">活動類型</h2>
+        </div>
+        <div class="px-5 py-4 grid grid-cols-2 gap-3 text-sm text-slate-600">
+          <label class="rounded-3xl border border-slate-100 bg-slate-50/80 p-4 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="font-medium">藝術 · 展覽</span>
+              <input type="checkbox" checked>
+            </div>
+            <p class="text-xs text-slate-400">基於 Facebook 用戶畫像 &amp; Klook 的精選展覽</p>
+          </label>
+          <label class="rounded-3xl border border-slate-100 bg-slate-50/80 p-4 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="font-medium">美食 · 咖啡</span>
+              <input type="checkbox" checked>
+            </div>
+            <p class="text-xs text-slate-400">結合 Yelp / Twitter 的熱門推介</p>
+          </label>
+          <label class="rounded-3xl border border-slate-100 bg-slate-50/80 p-4 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="font-medium">音樂 · Live</span>
+              <input type="checkbox">
+            </div>
+            <p class="text-xs text-slate-400">Klook 即時票務 + Twitter 熱度</p>
+          </label>
+          <label class="rounded-3xl border border-slate-100 bg-slate-50/80 p-4 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="font-medium">戶外 · 自然</span>
+              <input type="checkbox" checked>
+            </div>
+            <p class="text-xs text-slate-400">OpenWeather + Google Maps 路況綜合</p>
+          </label>
+        </div>
+      </section>
+
+      <section class="rounded-3xl border border-slate-100 bg-white shadow-sm">
+        <div class="px-5 py-4 border-b border-slate-100">
+          <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wide">時間偏好</h2>
+        </div>
+        <div class="px-5 py-4 space-y-4 text-sm text-slate-600">
+          <div>
+            <p class="font-medium">理想開始時間</p>
+            <div class="mt-3 flex items-center gap-3 text-xs text-slate-500">
+              <label class="px-3 py-2 rounded-2xl border border-slate-100 bg-slate-50">早晨</label>
+              <label class="px-3 py-2 rounded-2xl border border-slate-100 bg-teal-500 text-white">下午</label>
+              <label class="px-3 py-2 rounded-2xl border border-slate-100 bg-slate-50">夜晚</label>
+            </div>
+          </div>
+          <div>
+            <p class="font-medium">可用時長</p>
+            <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
+              <span>3 小時</span>
+              <span>6 小時</span>
+              <span>9 小時</span>
+            </div>
+            <input type="range" min="2" max="12" value="6" class="w-full mt-3 accent-teal-500">
+            <p class="mt-2 text-xs text-slate-400">系統會在合適時段內生成可替換節點</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-3xl border border-slate-100 bg-white shadow-sm">
+        <div class="px-5 py-4 border-b border-slate-100">
+          <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wide">出行偏好</h2>
+        </div>
+        <div class="px-5 py-4 space-y-4 text-sm text-slate-600">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="font-medium">交通方式</p>
+              <p class="text-xs text-slate-400 mt-1">優先推介步行 + 公共交通</p>
+            </div>
+            <button class="px-3 py-2 rounded-2xl bg-slate-100 text-xs font-medium">調整</button>
+          </div>
+          <div class="flex items-center gap-3 text-xs text-slate-500 flex-wrap">
+            <span class="px-3 py-2 rounded-2xl bg-teal-500 text-white font-medium">步行</span>
+            <span class="px-3 py-2 rounded-2xl bg-slate-100">港鐵</span>
+            <span class="px-3 py-2 rounded-2xl bg-slate-100">叮叮車</span>
+            <span class="px-3 py-2 rounded-2xl bg-slate-100">Uber</span>
+          </div>
+          <div>
+            <p class="font-medium">人流密度容忍度</p>
+            <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
+              <span>清靜</span>
+              <span>適中</span>
+              <span>熱鬧</span>
+            </div>
+            <input type="range" min="0" max="100" value="45" class="w-full mt-3 accent-teal-500">
+            <p class="mt-2 text-xs text-slate-400">基於 Google Maps 即時熱度調校推介</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-3xl border border-slate-100 bg-white shadow-sm">
+        <div class="px-5 py-4 border-b border-slate-100">
+          <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wide">同伴偏好</h2>
+        </div>
+        <div class="px-5 py-4 space-y-3 text-sm text-slate-600">
+          <label class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="h-11 w-11 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center">
+                <i class="fa-solid fa-user-group"></i>
+              </div>
+              <div>
+                <p class="font-medium">適合 2-3 人</p>
+                <p class="text-xs text-slate-400 mt-1">自動配對小型互動活動</p>
+              </div>
+            </div>
+            <input type="checkbox" checked>
+          </label>
+          <label class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="h-11 w-11 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <div>
+                <p class="font-medium">社交拓展</p>
+                <p class="text-xs text-slate-400 mt-1">基於 Facebook 用戶畫像匹配相似興趣活動</p>
+              </div>
+            </div>
+            <input type="checkbox">
+          </label>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-100 bg-white/80 backdrop-blur px-6 py-4">
+      <nav class="flex items-center justify-around text-slate-400 text-xs">
+        <a href="home.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-map-location-dot text-lg"></i>
+          主頁
+        </a>
+        <a href="discover.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-compass text-lg"></i>
+          探索
+        </a>
+        <a href="preferences.html" class="flex flex-col items-center text-teal-600">
+          <i class="fa-solid fa-sliders text-lg"></i>
+          偏好
+        </a>
+        <a href="profile.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-user text-lg"></i>
+          我的
+        </a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
+
+
+

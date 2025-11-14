@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WanderFlow · 行程</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-yH2f9t7tN9p1+v3g9utkS7r5Oj0kKq6HgMHqYjgJv1nVbWcv16O3Qe9nEGBWeItPxX2VINeodIZ6hO6PqxG9NA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      background: linear-gradient(180deg, #f8fbff 0%, #f0f8ff 50%, #f9fff7 100%);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-6 font-['SF Pro Display',_Inter,_PingFang_HK,_Helvetica,_Arial,_sans-serif] text-slate-900">
+  <div class="w-full max-w-md bg-white/95 backdrop-blur-xl shadow-xl rounded-3xl overflow-hidden border border-white/70">
+    <header class="px-6 pt-6 pb-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-slate-400">動態行程</p>
+          <h1 class="text-xl font-semibold">與你的節奏同步</h1>
+        </div>
+        <button class="h-11 w-11 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-600" aria-label="新增行程節點">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+      <div class="mt-4 flex items-center gap-2 text-xs text-slate-500 flex-wrap">
+        <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 font-medium flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span> 即時更新中
+        </span>
+        <span class="px-3 py-1 rounded-full bg-slate-100">偏好：藝術 / 咖啡 / 漫步</span>
+        <button class="px-3 py-1 rounded-full bg-teal-500 text-white font-medium flex items-center gap-1">
+          <i class="fa-solid fa-arrows-rotate text-xs"></i>
+          重新生成
+        </button>
+      </div>
+    </header>
+
+    <section class="px-6">
+      <div class="rounded-3xl border border-slate-100 bg-slate-50/60 p-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm text-slate-500">今日 · 周四 11月13日</p>
+            <h2 class="text-lg font-semibold mt-1">AI 已為你優化 5 個靈感點</h2>
+          </div>
+          <button class="px-3 py-2 bg-white text-sm rounded-2xl shadow border border-slate-100 flex items-center gap-2 hover:bg-teal-50 transition-colors">
+            <i class="fa-solid fa-arrows-rotate text-teal-500"></i>
+            重新生成
+          </button>
+        </div>
+        <div class="mt-4 flex items-center gap-3 text-xs text-slate-500">
+          <span class="flex items-center gap-1 px-2 py-1 rounded-full bg-white shadow border border-slate-100">
+            <i class="fa-solid fa-cloud-sun-rain text-sky-500"></i>
+            OpenWeather：下午或有驟雨
+          </span>
+          <span class="flex items-center gap-1 px-2 py-1 rounded-full bg-white shadow border border-slate-100">
+            <i class="fa-solid fa-traffic-light text-amber-500"></i>
+            Google Maps：中環車流指數 0.68
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 mt-6 space-y-5 pb-4">
+      <article class="rounded-3xl border border-slate-100 bg-white shadow-sm overflow-hidden">
+        <div class="flex">
+          <div class="w-1 bg-teal-400"></div>
+          <div class="flex-1 p-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-xs text-slate-400">09:00 - 10:30</p>
+                <h3 class="text-base font-semibold text-slate-800 mt-1">太平山頂晨間漫步</h3>
+              </div>
+              <span class="px-2 py-1 rounded-full text-xs bg-teal-50 text-teal-600 font-medium">戶外</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-500 leading-relaxed">基於 OpenWeather 判定無雨，建議乘坐山頂纜車。Google Maps 目前排隊 15 分鐘。</p>
+            <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
+              <span><i class="fa-solid fa-train mr-2 text-slate-400"></i>中環站 · 步行 6 分鐘</span>
+              <div class="flex items-center gap-2">
+                <button class="text-slate-400 hover:text-slate-600">
+                  <i class="fa-solid fa-arrow-up-arrow-down"></i>
+                </button>
+                <button class="text-teal-600 font-medium">導航</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rounded-3xl border border-slate-100 bg-white shadow-sm overflow-hidden">
+        <div class="flex">
+          <div class="w-1 bg-indigo-400"></div>
+          <div class="flex-1 p-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-xs text-slate-400">11:00 - 12:30</p>
+                <h3 class="text-base font-semibold text-slate-800 mt-1">半島酒店下午茶體驗</h3>
+              </div>
+              <span class="px-2 py-1 rounded-full text-xs bg-indigo-50 text-indigo-600 font-medium">餐飲</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-500 leading-relaxed">Yelp 評分 4.8，即時排隊 20 分鐘。Twitter 熱搜 #半島松露下午茶。</p>
+            <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
+              <span><i class="fa-solid fa-person-running mr-2 text-slate-400"></i>步行 9 分鐘</span>
+              <div class="flex items-center gap-2">
+                <button class="text-slate-400 hover:text-slate-600">
+                  <i class="fa-solid fa-arrow-up-arrow-down"></i>
+                </button>
+                <button class="text-indigo-500 font-medium">查看評價</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rounded-3xl border border-slate-100 bg-white shadow-sm overflow-hidden">
+        <div class="flex">
+          <div class="w-1 bg-rose-400"></div>
+          <div class="flex-1 p-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-xs text-slate-400">14:00 - 16:00</p>
+                <h3 class="text-base font-semibold text-slate-800 mt-1">M+ 博物館沉浸式展覽</h3>
+              </div>
+              <span class="px-2 py-1 rounded-full text-xs bg-rose-50 text-rose-600 font-medium">藝術</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-500 leading-relaxed">Klook 剩餘 35 張快速通道門票。基於 Facebook 用戶畫像，符合你的藝術偏好。</p>
+            <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
+              <span><i class="fa-solid fa-sailboat mr-2 text-slate-400"></i>天星小輪 · 12 分鐘</span>
+              <div class="flex items-center gap-2">
+                <button class="text-slate-400 hover:text-slate-600">
+                  <i class="fa-solid fa-arrow-up-arrow-down"></i>
+                </button>
+                <button class="text-rose-500 font-medium">鎖定席位</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rounded-3xl border border-slate-100 bg-white shadow-sm overflow-hidden">
+        <div class="flex">
+          <div class="w-1 bg-amber-400"></div>
+          <div class="flex-1 p-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-xs text-slate-400">17:00 - 18:30</p>
+                <h3 class="text-base font-semibold text-slate-800 mt-1">星光大道日落巡遊</h3>
+              </div>
+              <span class="px-2 py-1 rounded-full text-xs bg-amber-50 text-amber-600 font-medium">觀景</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-500 leading-relaxed">Google Maps 推介最佳觀景位，客流量 63%。OpenWeather：18:00 後氣溫 24°C。</p>
+            <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
+              <span><i class="fa-solid fa-person-walking-luggage mr-2 text-slate-400"></i>步行 4 分鐘</span>
+              <div class="flex items-center gap-2">
+                <button class="text-slate-400 hover:text-slate-600">
+                  <i class="fa-solid fa-arrow-up-arrow-down"></i>
+                </button>
+                <button class="text-amber-500 font-medium">調整次序</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rounded-3xl border border-slate-100 bg-white shadow-sm overflow-hidden">
+        <div class="flex">
+          <div class="w-1 bg-fuchsia-400"></div>
+          <div class="flex-1 p-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-xs text-slate-400">20:00 - 22:00</p>
+                <h3 class="text-base font-semibold text-slate-800 mt-1">蘭桂坊社交夜</h3>
+              </div>
+              <span class="px-2 py-1 rounded-full text-xs bg-fuchsia-50 text-fuchsia-600 font-medium">社交</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-500 leading-relaxed">Twitter 地圖話題熱度 92%，基於 Facebook 用戶畫像，匹配你的社交偏好。</p>
+            <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
+              <span><i class="fa-solid fa-taxi mr-2 text-slate-400"></i>Uber 預計 35 港元</span>
+              <div class="flex items-center gap-2">
+                <button class="text-slate-400 hover:text-slate-600">
+                  <i class="fa-solid fa-arrow-up-arrow-down"></i>
+                </button>
+                <button class="text-fuchsia-500 font-medium">叫車</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <footer class="border-t border-slate-100 bg-white/80 backdrop-blur px-6 py-4">
+      <div class="flex items-center justify-between">
+        <button class="flex items-center gap-2 px-4 py-3 rounded-2xl bg-slate-100 text-slate-600 text-sm">
+          <i class="fa-solid fa-clock-rotate-left text-slate-500"></i>
+          查看歷史行程
+        </button>
+        <div class="flex items-center gap-3">
+          <button class="h-11 w-11 rounded-2xl bg-teal-500 text-white flex items-center justify-center shadow">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <a href="home.html" class="text-xs text-teal-600 font-medium">返回主頁</a>
+        </div>
+      </div>
+      <nav class="mt-4 flex items-center justify-around text-slate-400 text-xs">
+        <a href="home.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-map-location-dot text-lg"></i>
+          主頁
+        </a>
+        <a href="discover.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-compass text-lg"></i>
+          探索
+        </a>
+        <a href="itinerary.html" class="flex flex-col items-center text-teal-600">
+          <i class="fa-solid fa-route text-lg"></i>
+          行程
+        </a>
+        <a href="profile.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-user text-lg"></i>
+          我的
+        </a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
+
+
+

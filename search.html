@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WanderFlow · 灵感搜索</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-yH2f9t7tN9p1+v3g9utkS7r5Oj0kKq6HgMHqYjgJv1nVbWcv16O3Qe9nEGBWeItPxX2VINeodIZ6hO6PqxG9NA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      background: linear-gradient(180deg, #f8fbff 0%, #eef3ff 40%, #e8f7f4 100%);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-6 font-['SF Pro Display',_Inter,_PingFang_HK,_Helvetica,_Arial,_sans-serif] text-slate-900">
+  <div class="w-full max-w-md bg-white/90 backdrop-blur-xl shadow-xl rounded-3xl overflow-hidden border border-white/70">
+    <header class="px-6 pt-6 pb-4">
+      <div class="flex items-center gap-3">
+        <div class="flex-1 relative">
+          <input type="text" placeholder="搜尋「週末 livehouse」「雨天行程」等" class="w-full rounded-2xl bg-slate-100/80 py-3 pl-4 pr-12 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-400/60 focus:bg-white" aria-label="搜尋靈感">
+          <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+        </div>
+        <button class="h-11 w-11 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-600" aria-label="開啟進階篩選">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+      <div class="mt-4 flex gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-slate-200 text-xs text-slate-500">
+        <span class="px-3 py-2 rounded-2xl bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-medium shadow-lg">為你推介</span>
+        <span class="px-3 py-2 rounded-2xl bg-white/90 backdrop-blur-sm border border-slate-200 text-slate-600 shadow hover:bg-white transition-colors">晴天</span>
+        <span class="px-3 py-2 rounded-2xl bg-white/90 backdrop-blur-sm border border-slate-200 text-slate-600 shadow hover:bg-white transition-colors">雨天</span>
+        <span class="px-3 py-2 rounded-2xl bg-white/90 backdrop-blur-sm border border-slate-200 text-slate-600 shadow hover:bg-white transition-colors">附近 3 公里</span>
+        <span class="px-3 py-2 rounded-2xl bg-white/90 backdrop-blur-sm border border-slate-200 text-slate-600 shadow hover:bg-white transition-colors">社交</span>
+        <span class="px-3 py-2 rounded-2xl bg-white/90 backdrop-blur-sm border border-slate-200 text-slate-600 shadow hover:bg-white transition-colors">輕鬆放鬆</span>
+      </div>
+    </header>
+
+    <main class="px-6 pb-6 space-y-6">
+      <section>
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-semibold text-slate-800">智能聚合結果</h2>
+          <span class="text-xs text-slate-400">綜合 Facebook 用戶畫像 · Yelp · Twitter</span>
+        </div>
+        <div class="mt-4 space-y-4">
+          <article class="rounded-3xl border border-slate-100 bg-white/90 backdrop-blur-sm shadow-sm p-4 hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-xs text-slate-400">夜晚 · 互動體驗</p>
+                <h3 class="text-base font-semibold text-slate-800 mt-1">中環光影沉浸式夜遊</h3>
+              </div>
+              <button class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-500 text-xs font-medium">適合情侶</button>
+            </div>
+            <div class="mt-3 grid grid-cols-3 gap-3 text-xs text-slate-500">
+              <div class="rounded-2xl bg-slate-50 p-3">
+                <i class="fa-solid fa-masks-theater text-teal-500"></i>
+                <p class="mt-2 font-medium text-slate-700">Facebook</p>
+                <p class="mt-1">畫像匹配度 89%</p>
+              </div>
+              <div class="rounded-2xl bg-slate-50 p-3">
+                <i class="fa-solid fa-hashtag text-indigo-500"></i>
+                <p class="mt-2 font-medium text-slate-700">Twitter</p>
+                <p class="mt-1">熱度 91 /100</p>
+              </div>
+              <div class="rounded-2xl bg-slate-50 p-3">
+                <i class="fa-solid fa-comments text-rose-500"></i>
+                <p class="mt-2 font-medium text-slate-700">Twitter</p>
+                <p class="mt-1">相關話題 482 條</p>
+              </div>
+            </div>
+            <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
+              <span><i class="fa-solid fa-route text-teal-500 mr-1"></i>距離你 1.2 公里 · 步行 15 分鐘</span>
+              <a href="event-detail.html" class="text-teal-500 font-medium">查看詳情</a>
+            </div>
+          </article>
+
+          <article class="rounded-3xl border border-slate-100 bg-white/90 backdrop-blur-sm shadow-sm p-4 hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-xs text-slate-400">下午 · 雨天後備</p>
+                <h3 class="text-base font-semibold text-slate-800 mt-1">灣仔室內花藝工坊</h3>
+              </div>
+              <button class="px-3 py-1 rounded-full bg-sky-50 text-sky-500 text-xs font-medium">雨天首選</button>
+            </div>
+            <div class="mt-3 flex items-center gap-3 text-xs text-slate-500">
+              <span class="px-3 py-1 rounded-full bg-slate-100">Yelp 評分 4.8</span>
+              <span class="px-3 py-1 rounded-full bg-slate-100">Twitter 熱議 #療癒下午茶</span>
+              <span class="px-3 py-1 rounded-full bg-slate-100">OpenWeather：大雨</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">系統自動為你替換原定戶外計劃，保留同伴邀請。支援 2 小時內免費改期。</p>
+            <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
+              <span><i class="fa-solid fa-bus text-slate-400 mr-1"></i>電車站 · 步行 4 分鐘</span>
+              <button class="text-teal-500 font-medium">加入行程</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-semibold text-slate-800">社交靈感牆 · Trending</h2>
+          <button class="text-xs text-slate-400">重新整理</button>
+        </div>
+        <div class="mt-4 grid grid-cols-2 gap-3">
+          <article class="rounded-3xl bg-white/90 backdrop-blur-sm border border-slate-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=400&q=80" alt="社交圖片" class="h-28 w-full object-cover">
+            <div class="p-3 text-xs text-slate-500">
+              <p class="text-sm font-semibold text-slate-800">太古里天空露台</p>
+              <p class="mt-1">Twitter · #度假氛圍感</p>
+            </div>
+          </article>
+          <article class="rounded-3xl bg-white/90 backdrop-blur-sm border border-slate-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+            <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=400&q=80" alt="社交圖片" class="h-28 w-full object-cover">
+            <div class="p-3 text-xs text-slate-500">
+              <p class="text-sm font-semibold text-slate-800">叮叮車夜食探店</p>
+              <p class="mt-1">Twitter · #HKNightRide</p>
+            </div>
+          </article>
+          <article class="rounded-3xl bg-white/90 backdrop-blur-sm border border-slate-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+            <img src="https://images.unsplash.com/photo-1466921583968-f07aa80c526e?auto=format&fit=crop&w=400&q=80" alt="社交圖片" class="h-28 w-full object-cover">
+            <div class="p-3 text-xs text-slate-500">
+              <p class="text-sm font-semibold text-slate-800">海港城街頭藝術節</p>
+              <p class="mt-1">Facebook 畫像匹配 · 符合偏好</p>
+            </div>
+          </article>
+          <article class="rounded-3xl bg-white/90 backdrop-blur-sm border border-slate-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+            <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=400&q=80" alt="社交圖片" class="h-28 w-full object-cover">
+            <div class="p-3 text-xs text-slate-500">
+              <p class="text-sm font-semibold text-slate-800">西貢皮划艇日</p>
+              <p class="mt-1">Google Maps · 水域指數 0.32</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-100 bg-white/80 backdrop-blur px-6 py-4">
+      <nav class="flex items-center justify-around text-slate-400 text-xs">
+        <a href="home.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-map-location-dot text-lg"></i>
+          主頁
+        </a>
+        <a href="discover.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-compass text-lg"></i>
+          探索
+        </a>
+        <a href="search.html" class="flex flex-col items-center text-teal-600">
+          <i class="fa-solid fa-magnifying-glass text-lg"></i>
+          靈感庫
+        </a>
+        <a href="profile.html" class="flex flex-col items-center hover:text-teal-500">
+          <i class="fa-solid fa-user text-lg"></i>
+          我的
+        </a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
+
+
+
